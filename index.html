@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Police Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div id="system-modal" class="modal-overlay">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h3 id="modal-title">System Notification</h3>
+                    <button class="modal-close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    Processing secure request data parameters...
+                </div>
+            </div>
+        </div>
+
+        <header class="app-header">
+            <div class="header-left">
+                <div class="crest-container">
+                    <i class="fa-solid fa-shield-halved brand-crest-icon"></i>
+                </div>
+                <div class="brand-text-wrapper">
+                    <h1 class="brand-title">Dubai Police</h1>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="badge-sos" id="global-sos">SOS</button>
+                <button class="profile-avatar-circle" id="profile-btn">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="screens-scroller-track">
+            
+            <div id="screen-home" class="app-screen active">
+                
+                <div class="login-banner">
+                    <div class="banner-text-row">
+                        <h3>Stay Connected.</h3>
+                        <span class="dismiss-btn" onclick="this.parentElement.parentElement.remove()">Dismiss</span>
+                    </div>
+                    <p class="identity-sub">Track your updates and access smart support.</p>
+                    <button class="btn-uae-pass" id="uae-pass-login-btn">
+                        <i class="fa-solid fa-fingerprint"></i> Sign in with UAE PASS
+                    </button>
+                    <div class="visitor-link-container">
+                        <a href="#" id="visitor-link" class="visitor-anchor">Visitor? Create UAE PASS Account</a>
+                    </div>
+                </div>
+
+                <h2 class="section-title">I Would Like To:</h2>
+                
+                <div class="grid-menu">
+                    <div class="menu-card" id="action-make-report">
+                        <div class="icon-wrap-box">
+                            <i class="fa-regular fa-comment-dots"></i>
+                        </div>
+                        <span>Make a Report</span>
+                    </div>
+                    <div class="menu-card" id="action-permit">
+                        <div class="icon-wrap-box">
+                            <i class="fa-regular fa-file-lines"></i>
+                        </div>
+                        <span>Request Certificate or Permit</span>
+                    </div>
+                    <div class="menu-card" id="action-pay">
+                        <div class="icon-wrap-box">
+                            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                        </div>
+                        <span>Inquire & Pay</span>
+                    </div>
+                    <div class="menu-card" id="action-support">
+                        <div class="icon-wrap-box">
+                            <i class="fa-solid fa-life-ring"></i>
+                        </div>
+                        <span>Request Support</span>
+                    </div>
+                    <div class="menu-card" id="action-explore">
+                        <div class="icon-wrap-box">
+                            <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <span>Explore Services</span>
+                    </div>
+                    <div class="menu-card" id="action-dashboard">
+                        <div class="icon-wrap-box">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <span>View My Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="services-list-container">
+                    <div class="list-header">
+                        <h3>Services</h3>
+                        <span class="edit-link">Edit</span>
+                    </div>
+                    
+                    <div class="service-row-item" id="row-fine-pay">
+                        <div class="row-icon-container">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="row-text-block">
+                            <h4>Fines Inquiry and Payment</h4>
+                            <p>Inquire about and pay your traffic violations.</p>
+                        </div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+
+                    <div class="service-row-item" id="row-clearance">
+                        <div class="row-icon-container">
+                            <i class="fa-regular fa-id-card"></i>
+                        </div>
+                        <div class="row-text-block">
+                            <h4>Police Clearance Certificate</h4>
+                            <p>Request a Police Clearance certificate.</p>
+                        </div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+
+                    <div class="service-row-item" id="row-accident">
+                        <div class="row-icon-container">
+                            <i class="fa-solid fa-car-burst"></i>
+                        </div>
+                        <div class="row-text-block">
+                            <h4>Traffic Accident Reports</h4>
+                            <p>Request a Minor Traffic Accident Report or Unknown Party Report.</p>
+                        </div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+
+                    <div class="service-row-item" id="row-status">
+                        <div class="row-icon-container">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                        <div class="row-text-block">
+                            <h4>Application Status</h4>
+                            <p>Track the status of your submitted requests.</p>
+                        </div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="whats-new-section">
+                    <div class="list-header">
+                        <h3>What's New</h3>
+                        <span class="edit-link">See All</span>
+                    </div>
+                    <div class="news-banner-card">
+                        <div class="news-image-placeholder">
+                            <i class="fa-solid fa-shield-halved safety-vector-back"></i>
+                        </div>
+                        <p class="news-tag">SMART SECURE TOGETHER</p>
+                        <h4>Together for a safer Dubai tomorrow</h4>
+                    </div>
+                </div>
+
+                <div class="location-hub-container">
+                    <div class="list-header">
+                        <div class="loc-title-group">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>Locate Nearby Service Spots</h3>
+                        </div>
+                        <span class="edit-link">See All</span>
+                    </div>
+                    <p class="loc-description">Tap here to quickly locate and navigate to the nearest service points such as: Police Stations, Smart Police Stations (SPS), Kiosks, and Gas Stations.</p>
+                    <div class="sps-hub-row">
+                        <div class="sps-badge">SPS</div>
+                        <div class="sps-text">
+                            <h4>Smart Police Station - La Mer</h4>
+                            <p>Operational Status: 24/7 Available</p>
+                        </div>
+                        <button class="btn-find-loc">FIND</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="screen-report" class="app-screen">
+                <div class="screen-sub-header">
+                    <button class="btn-back-nav" id="back-to-home"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h2>Make a Report</h2>
+                    <button class="badge-sos" id="report-sos">SOS</button>
+                </div>
+                
+                <p class="disclaimer-text">The services listed below are for non-emergencies. If you're in immediate danger, please deploy the SOS protocol directly.</p>
+
+                <div class="report-list" id="report-menu-list">
+                    <div class="report-item" data-report="Criminal Complaint">
+                        <div class="item-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div class="item-text"><h4>File Criminal Complaint</h4><p>File non-emergency criminal complaint requests securely.</p></div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                    <div class="report-item" data-report="Minor Traffic Accident">
+                        <div class="item-icon-box"><i class="fa-solid fa-car-on"></i></div>
+                        <div class="item-text"><h4>Traffic Accident Reports</h4><p>Log clear minor accidents for faster insurance dispatch processing.</p></div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                    <div class="report-item" data-report="Vehicle Obstruction">
+                        <div class="item-icon-box"><i class="fa-solid fa-ban"></i></div>
+                        <div class="item-text"><h4>Reporting Vehicle Obstruction</h4><p>Notify vehicle owners blocking thoroughfares immediately.</p></div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                    <div class="report-item" data-report="Police Eye">
+                        <div class="item-icon-box"><i class="fa-regular fa-eye"></i></div>
+                        <div class="item-text"><h4>Police Eye</h4><p>Confidentially flag neighborhood safety concerns or civic violations.</p></div>
+                        <div class="row-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <div id="dynamic-form-wizard" class="form-wizard-card">
+                    <div class="wizard-header-row">
+                        <h3 id="wizard-form-title">New Incident Statement</h3>
+                        <button id="btn-cancel-wizard" class="wizard-cancel-link">Cancel</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Incident Location Address</label>
+                        <input type="text" id="wiz-location" placeholder="Enter physical location details">
+                    </div>
+                    <div class="form-group">
+                        <label>Date & Time of Incident</label>
+                        <input type="datetime-local" id="wiz-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Detailed Factual Statement</label>
+                        <textarea id="wiz-desc" rows="5" placeholder="Provide clear factual observations..."></textarea>
+                    </div>
+                    <button id="btn-submit-wizard" class="btn-submit-report-form">Transmit Secure Statement</button>
+                </div>
+            </div>
+
+            <div id="screen-aix" class="app-screen">
+                <div class="aix-clean-top">
+                    <div class="aix-brand-logo">
+                        <i class="fa-solid fa-wand-magic-sparkles aix-title-sparkle"></i>
+                        <h2>AiX Guard Assistant</h2>
+                    </div>
+                    <button class="aix-action-btn" id="chat-reset">Clear Logs</button>
+                </div>
+                
+                <div class="chat-space-wrapper" id="chat-box">
+                    <div class="system-chat-start-date">Secure Virtual Assistance Terminal Active</div>
+                    <div class="msg bot">Welcome to the AiX Smart Support console. Please describe the issue or service query you require, and I will assist you with reporting paths or official information.</div>
+                </div>
+                
+                <div class="chat-input-row">
+                    <input type="text" id="chat-input" placeholder="Ask about services, fines, or report paths...">
+                    <button id="btn-send-chat" class="send-plane-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="bottom-nav-dock">
+            <div class="glass-pill-active" id="liquid-glass-slider"></div>
+            
+            <div class="nav-item active" id="nav-home">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" id="nav-aix">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>AiX</span>
+            </div>
+            <div class="nav-item" id="nav-contact">
+                <i class="fa-solid fa-phone"></i>
+                <span>Contact Us</span>
+            </div>
+            <div class="search-circle-btn" id="nav-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </nav>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
